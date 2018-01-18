@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6716d68c7a52c474db4b81685627c17f
+timeCreated: 1514850934
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PInfo: {fileID: 1375779849237414, guid: 542362f17143bd54cae648f701d101a0, type: 2}
+  - shuttle: {fileID: 1454908178161352, guid: afe39ae1655265743abe9980e331c0f5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

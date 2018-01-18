@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 514d34714d931044db0793fbbf7a5bac
+timeCreated: 1512089347
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - starFab: {fileID: 1241465702795160, guid: 523ef825dea97f04eb99dce696d553f8, type: 2}
+  - planetFab: {fileID: 1000012676824882, guid: d08ab230127825147aeeb0a97730e6bd,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
