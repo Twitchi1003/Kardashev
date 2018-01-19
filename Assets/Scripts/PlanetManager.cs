@@ -18,7 +18,7 @@ public class PlanetManager : MonoBehaviour {
 	Renderer rend;
 
 
-	public float materials;
+	public int materials;
 	private float hoverTime;
 	private Vector3 scaleHolder;
 
@@ -32,17 +32,23 @@ public class PlanetManager : MonoBehaviour {
     void Start () {
 
 		hoverTime = 0;
-		materials = 100f; //random.range 3,1000     murcury:jupiter ratio  
+        materials = Random.Range(3, 1000);     //murcury:jupiter ratio  
 		scaleHolder = transform.localScale;
 		rend = GetComponent<Renderer>();
 
+       if (materials <= 100f)
+            ptype = Ptype.Dwarf;
+        else if (materials > 100f && materials <= 400f)
+            ptype = Ptype.Rocky;
+        else if (materials > 400f && materials <= 600f)
+            ptype = Ptype.IceGiant;
+        else if (materials > 600f && materials <= 1000f)
+            ptype = Ptype.GasGiant;
 
-        ptype = (Ptype)Random.Range(0, 5);  //random element
-
+       //make terestrial if in Habital zone, reaches from = (sun.mass/1.1)*scalefactor to (sun.mass/0.5)*scalefactor
 
         switch (ptype) {
 		    case Ptype.Dwarf:
-				materials = materials * 0.5f;
 				scaleHolder = scaleHolder * 0.5f;
 				rend.sharedMaterial = material[0];
 				break;
@@ -53,12 +59,10 @@ public class PlanetManager : MonoBehaviour {
 				rend.sharedMaterial = material[2];
 				break;
 		    case Ptype.IceGiant:
-				materials = materials * 1.5f;
 				scaleHolder = scaleHolder * 1.5f;
 				rend.sharedMaterial = material[3];
 			break;
 			case Ptype.GasGiant:
-				materials = materials * 2f;
 				scaleHolder = scaleHolder * 2f;
 				rend.sharedMaterial = material[4];
 				break;
@@ -108,7 +112,7 @@ public class PlanetManager : MonoBehaviour {
         if (materials > 10f)
         {
             Instantiate(shuttle, transform.position + (Vector3.left * 0.25F), Quaternion.Euler(0, 180, -90), transform); // this should be on pop up ui element
-            materials -= 10F;
+            materials -= 10;
         }
         else {
             Debug.Log("NO MATERIALS");
